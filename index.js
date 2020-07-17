@@ -81,6 +81,19 @@ client.on('message', message => {
                 });
             }
         } // END OF POLL CREATE
+        else if (args[0] == 'close') {
+
+            message.channel.messages.fetch(args[1])
+                .then(getMessage => {
+                    if (!getMessage.embeds.length) {
+                        return message.channel.send("This is not a poll!");
+                    }
+
+                    let getEmbed = getMessage.embeds[0];
+
+                });
+
+        } // END OF POLL CLOSE 
 
 
     } // END OF POLL COMMAND
